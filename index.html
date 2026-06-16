@@ -117,27 +117,25 @@ Daftar Online & Offline, yg sedang berkunjung
 </div>
 
 <div class="note">
-<span id="online"> 100.2K Online</span><br>
-<span id="offline"> 10K Offline</span>
+<span id="views">👁 47,299 views</span>
 </div>
 
 <script>
-function randomStats() {
-    const online = (100000000 + Math.floor(Math.random() * 5000000)).toLocaleString();
-    const offline = (8000000 + Math.floor(Math.random() * 4000)).toLocaleString();
+let views = Math.floor(Math.random() * 9000000) + 100000;
 
-    document.getElementById('online').innerHTML =
-        `🟢 ${online} Online`;
+function randomViews() {
+    views += Math.floor(Math.random() * 100) + 1;
 
-    document.getElementById('offline').innerHTML =
-        `🔴 ${offline} Offline`;
+    document.getElementById('views').innerHTML =
+        `👁 ${views.toLocaleString()} views`;
 
-    // update lagi dengan waktu acak
-    const nextUpdate = Math.floor(Math.random() * 4000) + 1000; // 1-5 detik
-    setTimeout(randomStats, nextUpdate);
+    const nextUpdate =
+        Math.floor(Math.random() * 5000) + 1000;
+
+    setTimeout(randomViews, nextUpdate);
 }
 
-randomStats();
+randomViews();
 </script>
 
 </div>
