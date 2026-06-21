@@ -137,10 +137,14 @@ const links = {
 10: "https://sub4unlock.co/vAp7Z"
 };
 
-window.location.href = links[id];
+window.open(links[id], "_blank", "noopener,noreferrer");
+
+// refresh halaman ini setelah  5 detik
+setTimeout(() => {
+  location.reload();
+}, 5000);
 
 }
-
 
 let current = 1;
 let lastClick = 0;
