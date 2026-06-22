@@ -87,13 +87,16 @@ current++;
 
 if(current === 6){
 
-document.getElementById("unlockMenu").style.display = "block";
+  document.getElementById("unlockMenu").style.display = "block";
 
-confetti({
-  particleCount:150,
-  spread:120
-});
+  if(typeof confetti === "function"){
+    confetti({
+      particleCount:150,
+      spread:120
+    });
+  }
 
+  alert("🎉 Verification Completed!");
 }
 
 const selesai = current - 1;
