@@ -25,74 +25,9 @@ body{
 }
 
 .container{
-  width:100%;
-  max-width:550px;
-
-  padding:25px;
-  border-radius:25px;
-
-  background:rgba(10,15,25,.85);
-
-  backdrop-filter:blur(20px);
-
-  border:1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-  0 0 25px rgba(0,229,255,.15),
-  0 0 50px rgba(255,0,136,.10);
-
-  animation:containerFloat 4s ease-in-out infinite;
-}
-
-@keyframes containerFloat{
-  0%,100%{
-    transform:translateY(0px);
-  }
-  50%{
-    transform:translateY(-5px);
-  }
-}
-
-.profile{
-  display:flex;
-  justify-content:center;
-  margin-bottom:15px;
-}
-
-.profile img{
-  width:120px;
-  height:120px;
-
-  border-radius:50%;
-  object-fit:cover;
-
-  border:3px solid #00e5ff;
-
-  box-shadow:
-  0 0 20px #00e5ff,
-  0 0 40px #00e5ff55;
-
-  animation:pulse 2.5s infinite;
-}
-
-@keyframes pulse{
-  0%{
-    box-shadow:
-    0 0 15px #00e5ff,
-    0 0 30px #00e5ff55;
-  }
-
-  50%{
-    box-shadow:
-    0 0 30px #00e5ff,
-    0 0 60px #00e5ffaa;
-  }
-
-  100%{
-    box-shadow:
-    0 0 15px #00e5ff,
-    0 0 30px #00e5ff55;
-  }
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,.1);
 }
 
 .magic-title{
@@ -174,31 +109,15 @@ p{
 }
 
 .unlock-grid button{
-  padding:12px;
-
-  border:none;
-  border-radius:12px;
-
-  color:white;
-  font-weight:bold;
-
-  cursor:pointer;
-
-  background:
-  linear-gradient(
-  135deg,
-  #ff0088,
-  #00e5ff);
-
-  transition:.3s;
+  box-shadow:
+  0 0 15px #00e5ff55;
 }
 
 .unlock-grid button:hover{
-  transform:translateY(-3px);
-
+  transform:translateY(-5px);
   box-shadow:
-  0 0 15px rgba(255,0,136,.5),
-  0 0 15px rgba(0,229,255,.5);
+  0 0 25px #00e5ff,
+  0 0 35px #ff0088;
 }
 
 .note{
@@ -353,4 +272,75 @@ p{
   margin-top:20px;
   color:#94a3b8;
   font-size:13px;
+}
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+  radial-gradient(circle,#00e5ff22 1px,transparent 1px);
+  background-size:30px 30px;
+
+  animation:moveBg 20s linear infinite;
+}
+
+@keyframes moveBg{
+  from{
+    background-position:0 0;
+  }
+  to{
+    background-position:0 1000px;
+  }
+}
+
+#particles-js{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#00ff66;
+  display:inline-block;
+
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{
+    opacity:.3;
+  }
+}
+.stats-box{
+  display:flex;
+  gap:10px;
+  margin:20px 0;
+}
+
+.stats-box div{
+  flex:1;
+  text-align:center;
+  padding:12px;
+
+  background:#111827;
+  border-radius:15px;
+}
+.version-badge{
+  text-align:center;
+  margin-bottom:15px;
+
+  padding:8px;
+
+  border-radius:50px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #00e5ff,
+    #7c3aed
+  );
+
+  font-weight:bold;
 }
