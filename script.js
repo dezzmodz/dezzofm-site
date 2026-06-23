@@ -10,8 +10,8 @@ function goLink(id){
 
 const links = {
 1: "https://t.me/DezzV1bot?start=U1BFQ0lBTAa0wAAkFNbwMCAAM",
-2: "https://sub4unlock.co/vAp7Z",
-3: "https://sub4unlock.co/vAp7Z",
+2: "https://sfl.gl/DWhep8V",
+3: "https://safefileku.com/download/OvBbRK5xQPqnweqV",
 4: "https://sub4unlock.co/vAp7Z",
 5: "https://sub4unlock.co/vAp7Z",
 6: "https://sub4unlock.co/vAp7Z",
@@ -51,8 +51,8 @@ return;
 
 const now = Date.now();
 
-if(current > 1 && now - lastClick < 15000){
-alert("⏳ Wait 15 seconds before continuing!");
+if(current > 1 && now - lastClick < 10000){
+alert("⏳ Wait 10 seconds before continuing!");
 return;
 }
 
@@ -65,7 +65,7 @@ socialLinks[i - 1],
 
 step.style.pointerEvents = "none";
 
-let countdown = 15;
+let countdown = 10;
 
 step.innerHTML =
 `⏳ Please wait ${countdown}s`;
@@ -165,7 +165,7 @@ for(let i = 0; i <50; i++){
   const snow = document.createElement("div");
 
   snow.classList.add("snowflake");
-  snow.innerHTML = " 𝘿𝙚𝙯𝙕✘𝙊𝙁𝙈 ";
+  snow.innerHTML = "♥︎";
 
   snow.style.left = Math.random() * 100 + "%";
   snow.style.fontSize = (Math.random() * 20 + 8) + "px";
@@ -324,3 +324,13 @@ const ram = navigator.deviceMemory;
 
 ramBox.innerHTML =
 ram ? `🧠 RAM ~ ${ram}GB` : `🧠 RAM: Unknown`;
+function openThumbnail(){
+
+  document.body.style.transition = "0.4s";
+  document.body.style.opacity = "0";
+
+  setTimeout(() => {
+    window.location.href = "thumbnail.html";
+  }, 400);
+
+}
