@@ -18,6 +18,7 @@
 
 <div class="snow-container"></div>
 
+
 <div id="welcomeOverlay">
   <div class="welcome-box">
     <h1>👋 Welcome To 𝘿𝙚𝙯𝙕✘𝙊𝙁𝙈</h1>
@@ -37,53 +38,65 @@
       © 2026 - DezZ OFM<br>
       All Rights Reserved
     </p>
-  </div>
+    
+    </div>
 </div>
 
 <div class="container">
 
-<div class="status-online">
-  <span class="dot"></span>
-  System Online
+  <div class="status-online">
+    <span class="dot"></span>
+    System Online
+  </div>
+
+  <div class="profile">
+    <img src="https://files.catbox.moe/7n2m2x.jpg" alt="DezZ OFM Profile">
+  </div>
+
+  <h1 class="magic-title" id="typingTitle"></h1>
+
+  <p class="description">
+    Complete all verification steps to unlock exclusive premium content.
+  </p>
+
+  <div class="step" id="step1">📢 Join WhatsApp Channel</div>
+  <div class="step" id="step2">▶️ Subscribe YouTube</div>
+  <div class="step" id="step3">📡 Join Telegram</div>
+  <div class="step" id="step4">🎵 Follow TikTok</div>
+  <div class="step" id="step5">☕ Support Sociabuzz</div>
+
+  <div class="progress-box">
+    <div class="progress-title">🚀 Progress Unlock</div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="progress-text" id="progressText">
+      0/5 Step Complete
+    </div>
+
+    <div class="footer-premium">
+      ⚡ Powered By DezZ OFM Premium v1.7
+      </div>
+      
+  </div>
+
+  <div id="unlockMenu" class="unlock-grid" style="display:none;">
+    <button onclick="goLink(1)">CLAIM HOLOGRAM</button>
+    <button onclick="goLink(2)">DAGET & GETKEY MODS</button>
+    <button onclick="goLink(3)">GAMEMODE + CROSSHAIR VIP</button>
+  </div>
+
+<div class="feature-card" onclick="openThumbnail()">
+  <div class="icon">🎬</div>
+  <div class="info">
+    <h3>Thumbnail Downloader</h3>
+    <p>Download Thumbnail YouTube HD</p>
+  </div>
+  <div class="arrow">➜
+  </div>
 </div>
-
-<div class="profile">
-  <img src="https://files.catbox.moe/7n2m2x.jpg" alt="DezZ OFM Profile">
-</div>
-
-<h1 class="magic-title" id="typingTitle"></h1>
-
-<p class="description">
-Complete all verification steps to unlock exclusive premium content.
-</p>
-
-<div class="step" id="step1">📢 Join WhatsApp Channel</div>
-<div class="step" id="step2">▶️ Subscribe YouTube</div>
-<div class="step" id="step3">📡 Join Telegram</div>
-<div class="step" id="step4">🎵 Follow TikTok</div>
-<div class="step" id="step5">☕ Support Sociabuzz</div>
-
-<div class="progress-box">
-<div class="progress-title">🚀 Progress Unlock</div>
-
-<div class="progress-bar">
-<div class="progress-fill" id="progressFill"></div>
-</div>
-
-<div class="progress-text" id="progressText">
-0/5 Step Complete
-<div class="footer-premium">
-⚡ Powered By DezZ OFM Premium v1.6
-
-</div>
-</div>
-
-<div id="unlockMenu" class="unlock-grid" style="display:none;">
-<button onclick="goLink(1)">CLAIM HOLOGRAM</button>
-<button onclick="goLink(2)">???</button>
-
-</div>
-
 </div>
 
 <script src="script.js"></script>
