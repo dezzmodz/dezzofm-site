@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thumbnail Downloader</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="snow-container"></div>
+
+<div class="thumbnail-container">
+
+  <div class="thumbnail-header">
+    <img src="https://files.catbox.moe/7n2m2x.jpg">
+    <h1>🎬 Thumbnail Downloader</h1>
+    <p>Download Thumbnail YouTube & Shorts HD</p>
+  </div>
+
+  <input
+    type="text"
+    id="ytUrl"
+    placeholder="Paste link YouTube..."
+  >
+
+  <button class="thumb-btn" onclick="getThumbnail()">
+    🚀 Ambil Thumbnail
+  </button>
+
+  <img id="thumbnail">
+
+  <a id="downloadThumb" target="_blank">
+    ⬇️ Download Thumbnail
+  </a>
+
+  <button class="back-btn"
+  onclick="location.href='index.html'">
+    🔙 Kembali Ke Home
+  </button>
+
+</div>
+
+<script src="thumbnail.js"></script>
+
+</body>
+</html>
