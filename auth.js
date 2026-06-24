@@ -75,7 +75,7 @@ const semuaUser = await getDocs(
   collection(db,"users")
 );
 
-if(semuaUser.size >= 15){
+if(semuaUser.size >= 100){
 
   alert("🚫 Pendaftaran sudah penuh!");
 
