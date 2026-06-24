@@ -21,16 +21,34 @@
 
 <div id="welcomeOverlay">
   <div class="welcome-box">
+
     <h1>👋 Welcome To 𝘿𝙚𝙯𝙕✘𝙊𝙁𝙈</h1>
 
     <p>
       🔒 Secure Access System<br><br>
-      To protect premium content,<br>please complete all verification<br>steps before continuing.
+      To protect premium content,<br>
+      please complete all verification<br>
+      steps before continuing.
       <br><br>
       ⚡ Status : Waiting Verification
     </p>
 
-    <button onclick="startWebsite()">
+    <input
+  id="loginName"
+  placeholder=" Enter name..."
+>
+
+<button onclick="loginUser()">
+  🔐 Enter
+</button>
+
+<div id="userInfo"></div>
+
+
+<button
+  id="startBtn"
+  onclick="startWebsite()"
+  disabled>
   🚀 Start Verification
 </button>
 
@@ -38,8 +56,11 @@
       © 2026 - DezZ OFM<br>
       All Rights Reserved
     </p>
-    
-    </div>
+    <button onclick="logoutUser()">
+  🚪 Logout
+</button>
+
+  </div>
 </div>
 
 <div class="container">
@@ -78,7 +99,7 @@
     </div>
 
     <div class="footer-premium">
-      ⚡ Powered By DezZ OFM Premium v1.8
+      ⚡ Powered By 𝘿𝙚𝙯𝙕✘𝙊𝙁𝙈  v1.9
       </div>
       
   </div>
@@ -105,7 +126,7 @@
 
   <div class="info">
     <h3>Live Chat</h3>
-    <p>Chat dengan pengunjung lain</p>
+    <p> Chat with other visitors</p>
   </div>
 
   <div class="arrow">➜</div>
@@ -115,6 +136,7 @@
 </div>
 
 <script type="module" src="chat.js"></script>
+<script type="module" src="auth.js"></script>
 <script src="script.js"></script>
 
 </body>
