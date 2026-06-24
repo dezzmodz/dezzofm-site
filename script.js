@@ -3,6 +3,7 @@ const socialLinks = [
 "https://www.youtube.com/@DezZXMods",
 "https://t.me/+nmDgMfjt-t9jYzA1",
 "https://www.tiktok.com/@dezz_realmods",
+"https://t.me/DezzV1bot?start=U1BFQ0lBTAeVIAAkFNbwMCAAM",
 "https://sociabuzz.com/dezzreal"
 ];
 
@@ -36,7 +37,7 @@ setTimeout(() => {
 let current = 1;
 let lastClick = 0;
 
-for(let i = 1; i <= 5; i++){
+for(let i = 1; i <= 6; i++){
 
 const step = document.getElementById("step" + i);
 
@@ -85,7 +86,7 @@ step.dataset.text + " ✅";
 
 current++;
 
-if(current === 6){
+if(current === 7){
 
   document.getElementById("unlockMenu").style.display = "block";
 
@@ -100,14 +101,14 @@ if(current === 6){
 }
 
 const selesai = current - 1;
-const persen = (selesai / 5) * 100;
+const persen = (selesai / 6) * 100;
 
 document.getElementById("progressFill").style.width = persen + "%";
 
 document.getElementById("progressText").innerHTML =
-`${selesai}/5 Steps Completed (${persen}%)`;
+`${selesai}/6 Steps Completed (${persen}%)`;
 
-if(current === 6){
+if(current === 7){
 
 document.getElementById("unlockMenu").style.display = "block";
 
