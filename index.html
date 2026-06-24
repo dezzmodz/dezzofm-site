@@ -77,7 +77,7 @@
     </div>
 
     <div class="footer-premium">
-      ⚡ Powered By DezZ OFM Premium v1.7
+      ⚡ Powered By DezZ OFM Premium v1.8
       </div>
       
   </div>
@@ -90,15 +90,36 @@
 
 <div class="feature-card" onclick="openThumbnail()">
   <div class="icon">🎬</div>
+
   <div class="info">
     <h3>Thumbnail Downloader</h3>
     <p>Download Thumbnail YouTube HD</p>
   </div>
-  <div class="arrow">➜
-  </div>
-</div>
+
+  <div class="arrow">➜</div>
 </div>
 
+  <!-- Live Chat -->
+  <div class="chat-box">
+
+    <h3>💬 Live Chat</h3>
+
+    <div id="chatMessages"></div>
+
+    <input type="text" id="chatName" placeholder="Nama...">
+
+    <input type="text" id="chatInput" placeholder="Tulis pesan...">
+
+    <button onclick="sendMessage()">
+      Kirim
+    </button>
+
+  </div>
+
+
+</div>
+
+<script type="module" src="chat.js"></script>
 <script src="script.js"></script>
 
 </body>
