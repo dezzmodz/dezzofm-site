@@ -10,7 +10,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "API_KEY_KAMU",
+  apiKey: "AIzaSyCrp6zG18rZ4ori1rossW6-2Ho1OBdvT0c",
   authDomain: "dezzofm-chat.firebaseapp.com",
   projectId: "dezzofm-chat",
   storageBucket: "dezzofm-chat.firebasestorage.app",
@@ -24,12 +24,15 @@ const db = getFirestore(app);
 window.sendMessage = async function(){
 
   const name =
-  document.getElementById("chatName").value;
+  document.getElementById("username").value.trim();
 
   const message =
-  document.getElementById("chatInput").value;
+  document.getElementById("message").value.trim();
 
-  if(!name || !message) return;
+  if(!name || !message){
+    alert("Isi nama dan pesan dulu");
+    return;
+  }
 
   await addDoc(
     collection(db,"messages"),
@@ -40,9 +43,8 @@ window.sendMessage = async function(){
     }
   );
 
-  document.getElementById("chatInput").value = "";
-};
-
+  document.getElementById("message").value = "";
+}
 const q = query(
   collection(db,"messages"),
   orderBy("time")
@@ -51,7 +53,7 @@ const q = query(
 onSnapshot(q,(snapshot)=>{
 
   const box =
-  document.getElementById("chatMessages");
+  document.getElementById("messages");
 
   box.innerHTML = "";
 
