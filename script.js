@@ -334,3 +334,14 @@ function openThumbnail(){
   }, 400);
 
 }
+
+function openChat(){
+
+  document.body.style.transition = "0.4s";
+  document.body.style.opacity = "0";
+
+  setTimeout(() => {
+    window.location.href = "chat.html";
+  }, 400);
+
+}
