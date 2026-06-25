@@ -22,17 +22,21 @@ body{
 
 .thumbnail-container{
   width:100%;
-  min-height:100%;
+  max-width:700px;
 
-  margin:0;
+  min-height:100vh;
+
+  margin:0 auto;
+
   padding:25px;
-
-  border-radius:0;
-  max-width:none;
 
   box-sizing:border-box;
 
   background:rgba(15,23,42,.95);
+
+  border-radius:18px;
+
+  box-shadow:0 0 30px rgba(0,0,0,.4);
 }
 
 /* HEADER */
