@@ -396,3 +396,57 @@ font-size:26px;
 .topbar small{
 font-size:16px;
 }
+/* FORM INPUT SUPER BESAR */
+
+.input-area{
+padding:18px;
+gap:12px;
+}
+
+#username{
+width:180px;
+height:65px;
+font-size:22px;
+}
+
+#message{
+min-height:65px;
+max-height:180px;
+font-size:22px;
+}
+
+#username,
+#message{
+padding:18px;
+border-radius:16px;
+}
+
+/* TOMBOL KIRIM */
+
+.input-area button{
+width:75px;
+height:75px;
+font-size:32px;
+flex-shrink:0;
+}
+
+/* PLACEHOLDER */
+
+#username::placeholder,
+#message::placeholder{
+font-size:22px;
+}
+
+/* CHAT LEBIH BESAR */
+
+.bubble{
+font-size:24px !important;
+}
+
+.bubble b{
+font-size:26px !important;
+}
+
+.bubble small{
+font-size:18px !important;
+}
