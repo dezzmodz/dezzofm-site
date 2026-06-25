@@ -7,381 +7,236 @@ import {
   query,
   orderBy,
   onSnapshot,
+  serverTimestamp,
   doc,
   getDoc,
-  getDocs,
   setDoc,
-  deleteDoc,
-  serverTimestamp
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
-/* ================= FIREBASE ================= */
-
+/* FIREBASE */
 const firebaseConfig = {
-apiKey: "AIzaSyCrp6zG18rZ4ori1rossW6-2Ho1OBdvT0c",
-authDomain: "dezzofm-chat.firebaseapp.com",
-projectId: "dezzofm-chat",
-storageBucket: "dezzofm-chat.firebasestorage.app",
-messagingSenderId: "85498233362",
-appId: "1:85498233362:web:c70040692873a8216fcecb"
+  apiKey: "AIzaSyCrp6zG18rZ4ori1rossW6-2Ho1OBdvT0c",
+  authDomain: "dezzofm-chat.firebaseapp.com",
+  projectId: "dezzofm-chat",
+  storageBucket: "dezzofm-chat.firebasestorage.app",
+  messagingSenderId: "85498233362",
+  appId: "1:85498233362:web:c70040692873a8216fcecb"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-/* ================= ADMIN ================= */
-
-function isAdmin() {
-return localStorage.getItem("isAdmin") === "true";
-}
-
-window.adminLogin = async function () {
-
-const code =
-document.getElementById("adminCode").value.trim();
-
-const snap =
-await getDoc(doc(db, "settings", "admin"));
-
-if (!snap.exists()) {
-alert("Data admin tidak ditemukan");
-return;
-}
-
-if (code === snap.data().code) {
-
-localStorage.setItem(
-  "isAdmin",
-  "true"
-);
-
-alert("Login admin berhasil");
-location.reload();
-
-} else {
-
-alert("Kode admin salah");
-
-}
-};
-
-window.adminLogout = function () {
-
-localStorage.removeItem("isAdmin");
-
-alert("Logout berhasil");
-
-location.reload();
-};
-
-/* ================= BAN ================= */
-
-window.banUser = async function (username) {
-
-if (!isAdmin()) {
-alert("Bukan admin");
-return;
-}
-
-const reason =
-prompt("Alasan ban:");
-
-await setDoc(
-doc(
-db,
-"bannedUsers",
-username.toLowerCase()
-),
-{
-reason: reason || "spam",
-time: serverTimestamp(),
-by: "admin"
-}
-);
-
-alert(username + " berhasil diban");
-};
-
-/* ================= UNBAN ================= */
-
-window.unbanUser = async function (username) {
-
-if (!isAdmin()) {
-alert("Bukan admin");
-return;
-}
-
-await deleteDoc(
-doc(
-db,
-"bannedUsers",
-username.toLowerCase()
-)
-);
-
-alert(username + " berhasil di-unban");
-};
-
-/* ================= SEND MESSAGE ================= */
+/* ================= SEND MESSAGE #dezz================= */
+let cooldown = false;
 
 window.sendMessage = async function () {
 
-const name =
-document
-.getElementById("username")
-.value
-.trim()
-.toLowerCase();
+  const name = document.getElementById("username").value.trim();
+  const message = document.getElementById("message").value.trim();
 
-const message =
-document
-.getElementById("message")
-.value
-.trim();
-
-if (!name || !message) {
-
-alert("Isi nama dan pesan dulu");
-return;
-
-}
-
-localStorage.setItem(
-"dezz_user",
-name
-);
-
-/* CEK BAN */
-
-const banSnap =
-await getDoc(
-doc(
-db,
-"bannedUsers",
-name
-)
-);
-
-if (banSnap.exists()) {
-
-alert("Kamu dibanned dari chat");
-return;
-
-}
-
-/* COOLDOWN 15 MENIT */
-
-const lastSend =
-localStorage.getItem("lastSend");
-
-if (
-lastSend &&
-Date.now() - Number(lastSend) < 900000
-) {
-
-alert(
-  "⏳ Tunggu 15 menit sebelum kirim lagi"
-);
-
-return;
-
-}
-
-localStorage.setItem(
-"lastSend",
-Date.now()
-);
-
-await addDoc(
-collection(db, "messages"),
-{
-name,
-message,
-time: serverTimestamp()
-}
-);
-
-document.getElementById(
-"message"
-).value = "";
-};
-window.clearAllMessages = async function(){
-
-  if(!isAdmin()){
-    alert("Bukan admin");
+  if (!name || !message) {
+    alert("Isi nama & pesan dulu");
     return;
   }
 
-  if(!confirm("Hapus SEMUA pesan?")) return;
+  if(message.length > 4096){
+  alert("Pesan maksimal 4096 karakter");
+  return;
+}
 
-  const snap = await getDocs(
-    collection(db,"messages")
-  );
-
-  for(const d of snap.docs){
-    await deleteDoc(d.ref);
+  if(cooldown){
+    alert("Tunggu 10 detik sebelum kirim lagi");
+    return;
   }
 
-  alert("Semua pesan berhasil dihapus");
-}
-const btn = document.getElementById("clearChatBtn");
+  cooldown = true;
 
-if(btn && isAdmin()){
-  btn.style.display = "block";
-}
-if (isAdmin()) {
-  document.getElementById("logoutBtn").style.display = "block";
-}
-/* ================= CHAT ================= */
+  try{
 
-const q = query(
-  collection(db, "messages"),
-  orderBy("time")
+    await addDoc(
+      collection(db,"messages"),
+      {
+        name,
+        message,
+        time: serverTimestamp()
+      }
+    );
+
+    document.getElementById("message").value = "";
+
+  }catch(err){
+
+    console.log(err);
+    alert("Gagal kirim pesan");
+
+  }
+
+  setTimeout(()=>{
+    cooldown = false;
+  },10000);
+};
+
+
+/* ================= PINNED ================= */
+
+onSnapshot(
+doc(db,"settings","pinned"),
+(snap)=>{
+
+const pinBox =
+  document.getElementById("pinnedMessage");
+
+if(!pinBox) return;
+
+if(!snap.exists()){
+  pinBox.innerHTML = "";
+  return;
+}
+
+const pins = snap.data().pins || [];
+
+pinBox.innerHTML =
+  `<div class="pin-title">📌 Pesan Disematkan</div>` +
+  pins.map(
+    (text,index)=>`
+      <div class="pin-item">
+        📌 ${index + 1}. ${text}
+      </div>
+    `
+  ).join("");
+
+}
 );
 
-onSnapshot(q, (snapshot) => {
+/* ================= REALTIME CHAT ================= */
 
-  const box = document.getElementById("messages");
-  if (!box) return;
+const q = query(
+collection(db,"messages"),
+orderBy("time")
+);
 
-  box.innerHTML = "";
+onSnapshot(q,(snapshot)=>{
 
-  snapshot.forEach((d) => {
+const box =
+document.getElementById("messages");
 
-    const data = d.data();
+if(!box) return;
 
-    const isMe =
-      data.name === localStorage.getItem("dezz_user");
+box.innerHTML = "";
 
-    const waktu =
-      data.time?.toDate
-        ? data.time.toDate()
-        : new Date();
+snapshot.forEach((docSnap)=>{
 
-    box.innerHTML += `
+const data = docSnap.data();
+
+const waktu =
+  data.time?.toDate
+  ? data.time.toDate()
+  : new Date();
+
+let textWithLinks =
+  data.message || "";
+
+textWithLinks = textWithLinks.replace(
+  /(https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9-]+\.[a-zA-Z]{2,})/g,
+  (url)=>{
+
+    let link = url;
+
+    if(!url.startsWith("http")){
+      link = "https://" + url;
+    }
+
+    return `
+      <a href="${link}"
+         target="_blank"
+         style="
+           color:#4ea3ff;
+           text-decoration:underline;
+         ">
+         ${url}
+      </a>
+    `;
+  }
+);
+
+box.innerHTML += `
+  <div class="msg">
+
+    <div class="bubble">
+
+      <b>${data.name}</b>
+
+      <div>${textWithLinks}</div>
+
+      <small>
+        ${waktu.toLocaleTimeString("id-ID")}
+      </small>
+
       <div style="
-        background:${isMe ? "#2563eb" : "#1f2937"};
-        color:white;
-        padding:10px;
-        margin:8px 0;
-        border-radius:12px;
-        max-width:80%;
-        float:${isMe ? "right" : "left"};
-        clear:both;
+        margin-top:8px;
+        display:flex;
+        gap:8px;
       ">
 
-        <b>${data.name}</b>
+        <button onclick="copyMessage(\`${data.message.replace(/`/g,"\\`")}\`)">
+          📋 Salin
+        </button>
 
-        <div style="
-          margin-top:5px;
-          word-break:break-word;
-        ">
-          ${data.message}
-        </div>
-
-        <small style="
-          display:block;
-          margin-top:5px;
-          color:#94a3b8;
-        ">
-          ${waktu.toLocaleDateString("id-ID")}
-          -
-          ${waktu.toLocaleTimeString("id-ID")}
-        </small>
-
-        ${
-          isAdmin()
-            ? `
-              <button
-                onclick="banUser('${data.name}')"
-                style="
-                  margin-top:6px;
-                  background:#dc2626;
-                  color:white;
-                  border:none;
-                  border-radius:4px;
-                  padding:2px 8px;
-                  font-size:11px;
-                  cursor:pointer;
-                ">
-                 Ban
-              </button>
-            `
-            : ""
-        }
+        <button onclick='pinMessage(${JSON.stringify(data.message)})'>
+          📌 Semat
+        </button>
 
       </div>
-    `;
 
-  });
+    </div>
+
+  </div>
+`;
 
 });
 
-/* ================= BAN LIST ================= */
+});
 
-onSnapshot(
-  collection(db, "bannedUsers"),
-  (snapshot) => {
+window.copyMessage = function(text){
 
-    const box = document.getElementById("banList");
-    if (!box) return;
+  navigator.clipboard.writeText(text);
 
-    box.innerHTML = "<h3> Daftar User Dibanned</h3>";
+  alert(" Pesan disalin");
+};
 
-    snapshot.forEach((d) => {
+window.pinMessage = async function(text){
 
-      const data = d.data();
+  try{
 
+    const pinRef = doc(db,"settings","pinned");
 
-      const waktu =
-        data.time?.toDate
-          ? data.time.toDate()
-          : new Date();
+    const snap = await getDoc(pinRef);
 
-      box.innerHTML += `
-        <div style="
-          background:#1f2937;
-          color:white;
-          padding:10px;
-          margin:8px 0;
-          border-radius:10px;
-        ">
+    let pins = [];
 
-          <b>${d.id}</b><br>
+    if(snap.exists()){
+      pins = snap.data().pins || [];
+    }
 
-          Alasan: ${data.reason || "-"}<br>
+    pins.push(text);
 
-          Diban oleh: ${data.by || "-"}<br>
+    // Maksimal 3 pin
+    if(pins.length > 3){
+      pins.shift(); // hapus paling lama
+    }
 
-          <small style="color:#94a3b8;">
-            ${waktu.toLocaleDateString("id-ID")}
-            -
-            ${waktu.toLocaleTimeString("id-ID")}
-          </small>
+    await setDoc(
+      pinRef,
+      { pins }
+    );
 
-          ${
-            isAdmin()
-              ? `
-                <br><br>
-                <button
-                  onclick="unbanUser('${d.id}')"
-                  style="
-                    background:#16a34a;
-                    color:white;
-                    border:none;
-                    border-radius:4px;
-                    padding:4px 10px;
-                    cursor:pointer;
-                  ">
-                   Unban
-                </button>
-              `
-              : ""
-          }
+    alert(" Pesan disematkan");
 
-        </div>
-      `;
-    });
+  }catch(err){
+
+    console.log(err);
+    alert("Gagal menyematkan");
 
   }
-);
+};
