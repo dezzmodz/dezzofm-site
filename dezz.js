@@ -11,15 +11,31 @@ function goLink(id){
 
 const links = {
 1: "https://t.me/DezzV1bot?start=U1BFQ0lBTAa0wAAkFNbwMCAAM",
-2: "https://sfl.gl/DWhep8V",
+2: "https://safefileku.com/download/ODUmAK8scIGWMxTe",
 3: "https://safefileku.com/download/OvBbRK5xQPqnweqV",
 4: "https://sub4unlock.co/2ueMr",
-5: "https://sub4unlock.co/vAp7Z",
-6: "https://sub4unlock.co/vAp7Z",
-7: "https://sub4unlock.co/vAp7Z",
-8: "https://sub4unlock.co/vAp7Z",
-9: "https://sub4unlock.co/vAp7Z",
-10: "https://sub4unlock.co/vAp7Z"
+5: "https://sfl.gl/qojGlpj",
+6: "https://safefileku.com/download/Tax4qOyqAQmFimxB",
+7: "https://safefileku.com/download/FcCbbE4bpXMkkGvw",
+8: "https://sub4unlock.co/7ku6Q9Eu",
+9: "https://safefileku.com/download/xHu4FURvz5ilPHBA",
+10: "https://sfl.gl/K1qE",
+11: "https://sfl.gl/4Ys0F",
+12: "https://move2link.co/1b68786",
+13: "https://move2link.co/3e53475",
+14: "https://move2link.co/a09a0e2",
+15: "https://move2link.co/a9ded5d",
+16: "https://move2link.co/fc9187a",
+17: "https://cubanmods.com/keygratis.php",
+18: "https://aincradproxy.xyz/getkey",
+19: "https://zerigame.site/ctv/Neko.php",
+20: "https://nxlmods.io.vn/menuhoptac/getkey.php",
+21: "http://s3-hacks-get-key-production-eca0.up.railway.app",
+22: "https://viku.urlking.in/vikash",
+23: "https://criticalxr.alwaysdata.net/",
+24: "https://viku.mypdftools.site/mk",
+25: "https://ysmteam.io.vn/api/getkey/YSMTEAM",
+26: "https://safefileku.com/download/i1FRFBrBd9pzjp3J"
 };
 
 if(!links[id]){
@@ -86,7 +102,7 @@ step.dataset.text + " ✅";
 
 current++;
 
-if(current === 7){
+if(current === 27){
 
   document.getElementById("unlockMenu").style.display = "block";
 
@@ -108,7 +124,7 @@ document.getElementById("progressFill").style.width = persen + "%";
 document.getElementById("progressText").innerHTML =
 `${selesai}/6 Steps Completed (${persen}%)`;
 
-if(current === 7){
+if(current === 27){
 
 document.getElementById("unlockMenu").style.display = "block";
 

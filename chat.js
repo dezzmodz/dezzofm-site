@@ -46,7 +46,7 @@ window.sendMessage = async function () {
 }
 
   if(cooldown){
-    alert("Tunggu 10 detik sebelum kirim lagi");
+    alert("Tunggu 1 menit sebelum kirim lagi");
     return;
   }
 
@@ -74,7 +74,7 @@ window.sendMessage = async function () {
 
   setTimeout(()=>{
     cooldown = false;
-  },10000);
+  },100000);
 };
 
 
