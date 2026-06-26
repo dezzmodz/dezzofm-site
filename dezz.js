@@ -102,7 +102,7 @@ step.dataset.text + " ✅";
 
 current++;
 
-if(current === 27){
+if(current === 7){
 
   document.getElementById("unlockMenu").style.display = "block";
 
@@ -124,7 +124,7 @@ document.getElementById("progressFill").style.width = persen + "%";
 document.getElementById("progressText").innerHTML =
 `${selesai}/6 Steps Completed (${persen}%)`;
 
-if(current === 27){
+if(current === 7){
 
 document.getElementById("unlockMenu").style.display = "block";
 
