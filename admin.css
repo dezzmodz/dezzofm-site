@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+/* CONTAINER */
+.admin {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* TITLE */
+h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #25D366;
+}
+
+/* STATS BOX */
+.admin > div:first-of-type {
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* USER & ROOM LIST */
+#userList,
+#roomList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CARD STYLE */
+.user-card,
+.room-card {
+  background: #1c1c1c;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.user-card:hover,
+.room-card:hover {
+  background: #222;
+}
+
+/* USER NAME */
+.user-card b {
+  font-size: 15px;
+}
+
+/* STATUS TEXT */
+.user-card div {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* BUTTONS */
+button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* BAN BUTTON */
+button:nth-child(1) {
+  background: #ff9800;
+  color: #000;
+}
+
+/* DELETE BUTTON */
+button:nth-child(2) {
+  background: #ff3b3b;
+  color: white;
+}
+
+/* ROOM STYLE */
+.room-card {
+  font-size: 13px;
+  opacity: 0.9;
+}
+#roomModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+#roomModal div {
+  color: white;
+}

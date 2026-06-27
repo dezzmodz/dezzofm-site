@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Edit Profil</title>
+
+<link rel="stylesheet" href="profile.css">
+
+</head>
+
+<body>
+
+<div class="profile-box">
+
+<h2>Edit Profil</h2>
+
+<div class="photo">
+
+<img
+id="photoPreview"
+src="https://files.catbox.moe/7n2m2x.jpg">
+
+<input
+
+id="photo"
+
+placeholder="Link Foto"
+
+>
+
+</div>
+
+<label>Nama</label>
+
+<input
+id="displayName"
+placeholder="Nama">
+
+<label>Bio</label>
+
+<textarea
+
+id="bio"
+
+placeholder="Tulis bio..."
+
+></textarea>
+
+<button onclick="saveProfile()">
+
+💾 Simpan
+
+</button>
+
+<button
+
+class="back-btn"
+
+onclick="location.href='chat.html'">
+
+⬅ Kembali
+
+</button>
+
+</div>
+
+<script type="module" src="profile.js"></script>
+
+</body>
+</html>

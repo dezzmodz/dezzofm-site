@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Private Chat</title>
+
+<link rel="stylesheet" href="chat.css">
+
+</head>
+
+<body>
+
+<div class="chat-app">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <div class="profile">
+
+            <img id="myPhoto"
+            src="https://files.catbox.moe/7n2m2x.jpg">
+
+            <div>
+
+                <h3 id="myName">
+                    Loading...
+                </h3>
+
+                <small id="myStatus">
+                    Online
+                </small>
+
+            </div>
+            
+            <button class="profile-btn" onclick="location.href='profile.html'">
+⚙️ settings
+</button>
+
+        </div>
+
+        <div class="search-box">
+
+            <input
+            type="text"
+            id="searchUser"
+            placeholder="🔍 Cari pengguna...">
+
+        </div>
+
+        <div
+        class="user-list"
+        id="userList">
+
+        </div>
+        
+        <button onclick="location.href='inbox.html'">
+  💬 Inbox
+</button>
+<button onclick="location.href='index.html'">
+  ↩️ Back
+</button>
+
+    </div>
+
+    <!-- CHAT -->
+    <div class="chat-container">
+
+        <div class="chat-header">
+
+            <img
+            id="chatPhoto"
+            src="https://files.catbox.moe/7n2m2x.jpg">
+
+            <div>
+
+                <h3 id="chatName">
+                    Pilih Pengguna
+                </h3>
+                
+                <div id="chatBio" class="chat-bio">
+        Belum ada bio.
+    </div>
+
+                <small id="chatStatus">
+
+                </small>
+
+            </div>
+
+        </div>
+
+        <div
+        class="messages"
+        id="messages">
+
+        </div>
+
+        <div class="input-area">
+
+            <textarea
+
+            id="message"
+
+            placeholder="Tulis pesan..."
+
+            ></textarea>
+
+            <button
+
+            id="sendBtn"
+
+            onclick="sendMessage()">
+
+            ➤
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="chat.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel</title>
+
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<div class="admin">
+
+  <h2>📊 Stats</h2>
+  <div>
+    Users: <span id="totalUser">0</span><br>
+    Chats: <span id="totalChat">0</span>
+  </div>
+
+  <h2>👤 Users</h2>
+  <div id="userList"></div>
+
+  <h2>💬 Rooms</h2>
+  <div id="roomList"></div>
+  
+  <button onclick="location.href='inbox.html'">
+  💬 Inbox
+
+</div>
+
+<div id="roomModal" style="display:none; position:fixed; inset:0; background:#000000cc; padding:20px;">
+  
+  <div style="background:#1c1c1c; padding:15px; border-radius:10px; max-width:600px; margin:auto;">
+
+    <h3>📩 Room Preview</h3>
+
+    <div id="roomMessages" style="max-height:300px; overflow:auto;"></div>
+
+    <br>
+
+    <button onclick="closeModal()">❌ Close</button>
+
+    <button id="deleteBtn">🗑 Delete Room</button>
+
+  </div>
+
+</div>
+
+<!-- ✅ SCRIPT HARUS DI BAWAH -->
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Login</title>
+
+<link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <img src="https://files.catbox.moe/7n2m2x.jpg" class="logo">
+
+    <h1>Welcome</h1>
+
+    <p>Login ke akun kamu</p>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="📧 Email">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="🔒 Password">
+
+    <button id="loginBtn">
+        Login Email
+    </button>
+
+    <hr>
+
+    <input
+        type="tel"
+        id="phone"
+        placeholder="📱 Nomor HP (+62...)">
+
+    <div id="recaptcha-container"></div>
+
+    <button id="phoneBtn">
+        Login Nomor HP
+    </button>
+
+    <input
+        type="text"
+        id="otp"
+        placeholder="Masukkan Kode OTP">
+
+    <button id="verifyBtn">
+        Verifikasi OTP
+    </button>
+
+    <hr>
+
+    <button onclick="location.href='register.html'">
+        Buat Akun Baru
+    </button>
+
+</div>
+
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>

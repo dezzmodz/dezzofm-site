@@ -1,0 +1,52 @@
+body{
+margin:0;
+font-family:Arial;
+background:#0b141a;
+color:#fff;
+}
+
+.inbox-app{
+max-width:420px;
+margin:auto;
+height:100vh;
+background:#111b21;
+}
+
+.header{
+padding:15px;
+font-size:20px;
+font-weight:bold;
+background:#202c33;
+}
+
+.chat-list{
+display:flex;
+flex-direction:column;
+}
+
+.chat-item{
+display:flex;
+align-items:center;
+padding:12px;
+border-bottom:1px solid #2a3942;
+cursor:pointer;
+}
+
+.chat-item:hover{
+background:#202c33;
+}
+
+.chat-item img{
+width:45px;
+height:45px;
+border-radius:50%;
+margin-right:10px;
+}
+
+.chat-info b{
+display:block;
+}
+
+.chat-info small{
+color:#8696a0;
+}

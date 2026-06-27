@@ -1,0 +1,120 @@
+import { auth, db } from "./firebase.js";
+
+import {
+
+createUserWithEmailAndPassword,
+updateProfile
+
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+
+import {
+
+doc,
+setDoc,
+getDoc,
+serverTimestamp
+
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+document.getElementById("registerBtn").onclick =
+async ()=>{
+
+const displayName =
+document.getElementById("displayName").value.trim();
+
+const username =
+document.getElementById("username").value.trim();
+
+const email =
+document.getElementById("email").value.trim();
+
+const password =
+document.getElementById("password").value;
+
+const password2 =
+document.getElementById("password2").value;
+
+if(
+!displayName||
+!username||
+!email||
+!password
+){
+alert("Lengkapi semua data");
+return;
+}
+
+if(password!=password2){
+alert("Password tidak sama");
+return;
+}
+
+const cek =
+await getDoc(doc(db,"usernames",username));
+
+if(cek.exists()){
+alert("Username sudah dipakai");
+return;
+}
+
+try{
+
+const res =
+await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+await updateProfile(
+res.user,
+{
+displayName
+}
+);
+
+await setDoc(
+doc(db,"users",res.user.uid),
+{
+
+uid:res.user.uid,
+
+username,
+
+displayName,
+
+email,
+
+photo:"",
+
+bio:"Join: https://sociabuzz.com/dezzreal",
+
+role:"user",
+
+online:true,
+
+createdAt:serverTimestamp(),
+
+lastSeen:serverTimestamp()
+
+}
+);
+
+await setDoc(
+doc(db,"usernames",username),
+{
+
+uid:res.user.uid
+
+}
+);
+
+location.href="chat.html";
+
+}catch(e){
+
+alert(e.message);
+
+}
+
+}

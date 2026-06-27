@@ -354,13 +354,13 @@ function openThumbnail(){
 
 }
 
-function openChat(){
+function openlogin(){
 
   document.body.style.transition = "0.4s";
   document.body.style.opacity = "0";
 
   setTimeout(() => {
-    window.location.href = "chat.html";
+    window.location.href = "login.html";
   }, 400);
 
 }
