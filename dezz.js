@@ -35,7 +35,9 @@ const links = {
 23: "https://criticalxr.alwaysdata.net/",
 24: "https://viku.mypdftools.site/mk",
 25: "https://ysmteam.io.vn/api/getkey/YSMTEAM",
-26: "https://safefileku.com/download/i1FRFBrBd9pzjp3J"
+26: "https://safefileku.com/download/i1FRFBrBd9pzjp3J",
+27: "https://safefileku.com/download/3WEinultZ7CMFZVo",
+28: "https://gringoxp.site/gringo/GetKey"
 };
 
 if(!links[id]){
