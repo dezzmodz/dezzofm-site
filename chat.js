@@ -3,9 +3,8 @@
 // ==========================
 
 import {
-
-onAuthStateChanged
-
+onAuthStateChanged,
+signOut
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 import {
@@ -479,14 +478,28 @@ Pilih pengguna untuk mulai chat.
 </div>
 
 `;
-const menu = document.querySelector(".menu");
-const btn = document.querySelector(".menu-btn");
+function toggleMenu() {
+    const menu = document.querySelector(".menu");
+    if (menu) {
+        menu.classList.toggle("show");
+    }
+}
 
-btn.onclick = (e) => {
-    e.stopPropagation();
-    menu.classList.toggle("show");
-};
+window.toggleMenu = toggleMenu;
 
-document.onclick = () => {
-    menu.classList.remove("show");
+window.addEventListener("click", (e) => {
+    const menu = document.querySelector(".menu");
+
+    if (menu && !e.target.closest(".menu")) {
+        menu.classList.remove("show");
+    }
+});
+window.logout = async function () {
+    try {
+        await signOut(auth);
+        location.href = "login.html";
+    } catch (err) {
+        console.error(err);
+        alert("Gagal logout");
+    }
 };
