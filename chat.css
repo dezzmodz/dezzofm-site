@@ -247,8 +247,9 @@ MESSAGES
 
 .messages{
     flex:1;
-    min-height:0;
     overflow-y:auto;
+    overflow-x:hidden;
+    min-height:0;
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -322,27 +323,26 @@ INPUT
 ========================== */
 
 .input-area{
-    flex-shrink:0;
     display:flex;
     align-items:center;
     gap:10px;
     padding:12px;
     background:#202c33;
     border-top:1px solid #2d3b45;
+    flex-shrink:0;
 }
 
 #message{
     flex:1;
-    height:50px;
+    min-height:50px;
+    max-height:120px;
     resize:none;
     border:none;
     outline:none;
     padding:14px;
     border-radius:25px;
     background:#2a3942;
-    color:#ffffff !important;
-    caret-color:#ffffff;
-    -webkit-text-fill-color:#ffffff;
+    color:#fff;
     font-size:16px;
 }
 
