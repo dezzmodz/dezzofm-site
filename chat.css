@@ -511,3 +511,15 @@ code{
     padding:2px 5px;
     border-radius:4px;
 }
+.chat-image{
+    max-width:240px;
+    width:100%;
+    border-radius:12px;
+    display:block;
+    margin-bottom:8px;
+    cursor:pointer;
+}
+
+.chat-text{
+    word-break:break-word;
+}

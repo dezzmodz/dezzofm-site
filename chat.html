@@ -97,29 +97,31 @@
 
         </div>
 
-        <div class="input-area">
+<div class="input-area">
 
-            <textarea
+    <textarea
+        id="message"
+        placeholder="Tulis pesan..."
+    ></textarea>
 
-            id="message"
+    <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        hidden
+    >
 
-            placeholder="Tulis pesan..."
+    <button id="photoBtn" type="button">
+        📷
+    </button>
 
-            ></textarea>
-
-            <button
-
-            id="sendBtn"
-
-            onclick="sendMessage()">
-
-            ➤
-
-            </button>
-
-        </div>
-
-    </div>
+    <button
+        id="sendBtn"
+        type="button"
+        onclick="sendMessage()"
+    >
+        ➤
+    </button>
 
 </div>
 

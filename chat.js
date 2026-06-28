@@ -298,111 +298,88 @@ box.innerHTML="";
 
 snapshot.forEach((docSnap)=>{
 
-const msg=docSnap.data();
+    const msg = docSnap.data();
 
-const div=document.createElement("div");
+    const div = document.createElement("div");
 
-div.className=
-msg.sender===myUid
-?
-"message me"
-:
-"message other";
+    div.className = msg.sender === myUid
+        ? "message me"
+        : "message other";
 
-let jam="";
+    let jam = "";
 
-if(msg.time){
+    if(msg.time){
+        const d = msg.time.toDate();
+        jam = d.toLocaleTimeString([],{
+            hour:"2-digit",
+            minute:"2-digit"
+        });
+    }
 
-const d=msg.time.toDate();
+    let text = (msg.text || "")
 
-jam=d.toLocaleTimeString([],{
-hour:"2-digit",
-minute:"2-digit"
-});
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
 
+    .replace(/(https?:\/\/[^\s<]+)/gi,
+        '<a href="$1" target="_blank">$1</a>')
+
+    .replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,})/gi,
+        '<a href="mailto:$1">$1</a>')
+
+    .replace(/\*\*(.*?)\*\*/gs,"<b>$1</b>")
+    .replace(/\*(.*?)\*/gs,"<i>$1</i>")
+    .replace(/__(.*?)__/gs,"<u>$1</u>")
+    .replace(/~~(.*?)~~/gs,"<s>$1</s>")
+
+    .replace(/\|\|(.*?)\|\|/gs,
+        '<span class="spoiler">$1</span>')
+
+    .replace(/`([^`]+)`/g,"<code>$1</code>")
+
+    .replace(/```([\s\S]*?)```/g,
+        "<pre><code>$1</code></pre>")
+
+    .replace(/^> (.*)$/gm,
+        "<blockquote>$1</blockquote>")
+
+    .replace(/^### (.*)$/gm,"<h3>$1</h3>")
+    .replace(/^## (.*)$/gm,"<h2>$1</h2>")
+    .replace(/^# (.*)$/gm,"<h1>$1</h1>")
+
+    .replace(/^- (.*)$/gm,"• $1")
+
+    .replace(/@([a-zA-Z0-9_]+)/g,
+        '<span class="mention">@$1</span>')
+
+    .replace(/#([a-zA-Z0-9_]+)/g,
+        '<span class="hashtag">#$1</span>')
+
+    .replace(/\n/g,"<br>");
+
+let isi = "";
+
+if (msg.image) {
+    isi += `
+        <img src="${msg.image}" class="chat-image">
+    `;
 }
 
-  let text = msg.text
+if (text) {
+    isi += `
+        <div class="chat-text">${text}</div>
+    `;
+}
 
-// Escape HTML
-.replace(/&/g, "&amp;")
-.replace(/</g, "&lt;")
-.replace(/>/g, "&gt;")
+    div.innerHTML = `
+    <div class="bubble">
+        ${isi}
+        <span class="time">${jam}</span>
+    </div>
+    `;
 
-// URL
-.replace(
-    /(https?:\/\/[^\s<]+)/gi,
-    '<a href="$1" target="_blank">$1</a>'
-)
-
-// Email
-.replace(
-    /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,})/gi,
-    '<a href="mailto:$1">$1</a>'
-)
-
-// Bold **text**
-.replace(/\*\*(.*?)\*\*/gs, "<b>$1</b>")
-
-// Italic *text*
-.replace(/\*(.*?)\*/gs, "<i>$1</i>")
-
-// Underline __text__
-.replace(/__(.*?)__/gs, "<u>$1</u>")
-
-// Strike ~~text~~
-.replace(/~~(.*?)~~/gs, "<s>$1</s>")
-
-// Spoiler ||text||
-.replace(/\|\|(.*?)\|\|/gs,
-'<span class="spoiler">$1</span>')
-
-// Inline Code
-.replace(/`([^`]+)`/g,
-"<code>$1</code>")
-
-// Code Block
-.replace(
-/```([\s\S]*?)```/g,
-"<pre><code>$1</code></pre>"
-)
-
-// Quote
-.replace(/^> (.*)$/gm,
-"<blockquote>$1</blockquote>")
-
-// Heading
-.replace(/^# (.*)$/gm,"<h1>$1</h1>")
-.replace(/^## (.*)$/gm,"<h2>$1</h2>")
-.replace(/^### (.*)$/gm,"<h3>$1</h3>")
-
-// Bullet List
-.replace(/^- (.*)$/gm,"• $1")
-
-// Mention @username
-.replace(
-/@([a-zA-Z0-9_]+)/g,
-'<span class="mention">@$1</span>'
-)
-
-// Hashtag
-.replace(
-/#([a-zA-Z0-9_]+)/g,
-'<span class="hashtag">#$1</span>'
-)
-
-// Baris baru
-.replace(/\n/g,"<br>");
-
-
-div.innerHTML = `
-<div class="bubble">
-    ${text}
-    <span class="time">${jam}</span>
-</div>
-`;
-
-box.appendChild(div);
+    box.appendChild(div);
 
 });
 
@@ -418,33 +395,51 @@ box.scrollTop=box.scrollHeight;
 
 window.sendMessage = async function () {
 
-  if (!selectedUser) {
-    alert("Pilih pengguna dulu.");
-    return;
-  }
+    if (!selectedUser) {
+        alert("Pilih pengguna dulu.");
+        return;
+    }
 
-  const input = document.getElementById("message");
-  const text = input.value.trim();
+    const input = document.getElementById("message");
+const photoInput = document.getElementById("photoInput");
+const photo = photoInput.files[0];
 
-  if (text === "") return;
+    const text = input.value.trim();
+    
+    // kalau kosong semua
+    if (!text && !photo) return;
 
-  try {
+    try {
 
-    await addDoc(
-      collection(db, "rooms", roomId, "messages"),
-      {
+        let imageUrl = "";
+
+        // Upload gambar dulu kalau ada
+        if (photo) {
+            imageUrl = await uploadImage(photo);
+        }
+
+        // Simpan ke Firebase
+        await addDoc(
+    collection(db,"rooms",roomId,"messages"),
+    {
         sender: myUid,
         text: text,
+        image: imageUrl,
         time: serverTimestamp()
-      }
-    );
+    }
+);
 
-    input.value = "";
+        // Reset
+        input.value = "";
+        input.style.height = "50px";
+        document.getElementById("photoInput").value = "";
 
-  } catch (err) {
-    console.error(err);
-    alert(err.message);
-  }
+    } catch (err) {
+
+        console.error(err);
+        alert(err.message);
+
+    }
 
 }
 
@@ -518,3 +513,32 @@ document.addEventListener("click", (e) => {
         e.target.classList.toggle("hidden");
     }
 });
+document.getElementById("photoBtn").onclick = () => {
+    document.getElementById("photoInput").click();
+};
+
+    const IMGBB_API_KEY = "513fb30ed6cefebbb37a4700f2e7098d";
+// atau gunakan key yang satunya jika ini tidak bekerja
+
+async function uploadImage(file){
+
+    const form = new FormData();
+    form.append("image", file);
+
+    const res = await fetch(
+        `https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`,
+        {
+            method: "POST",
+            body: form
+        }
+    );
+
+    const data = await res.json();
+
+    if(!data.success){
+        console.log(data);
+        throw new Error("Upload gagal");
+    }
+
+    return data.data.url;
+}
