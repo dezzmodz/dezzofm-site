@@ -322,10 +322,39 @@ minute:"2-digit"
 
 }
 
-const text = msg.text.replace(
-  /(https?:\/\/[^\s]+)/g,
-  '<a href="$1" target="_blank">$1</a>'
-);
+let text = msg.text
+
+// Escape HTML
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+
+// Link
+.replace(
+ /(https?:\/\/[^\s]+)/g,
+ '<a href="$1" target="_blank">$1</a>'
+)
+
+// Bold **text**
+.replace(/\*\*(.*?)\*\*/g,"<b>$1</b>")
+
+// Italic *text*
+.replace(/\*(.*?)\*/g,"<i>$1</i>")
+
+// Underline __text__
+.replace(/__(.*?)__/g,"<u>$1</u>")
+
+// Strike ~~text~~
+.replace(/~~(.*?)~~/g,"<s>$1</s>")
+
+// Inline Code
+.replace(/`(.*?)`/g,"<code>$1</code>")
+
+// Quote
+.replace(/^> (.*)$/gm,"<blockquote>$1</blockquote>")
+
+// Baris baru
+.replace(/\n/g,"<br>");
 
 div.innerHTML = `
 <div class="bubble">
@@ -389,17 +418,18 @@ window.sendMessage = async function () {
 // ENTER = SEND
 // ==========================
 
-document
-.getElementById("message")
-.addEventListener("keydown",(e)=>{
+document.getElementById("message").addEventListener("keydown", (e) => {
 
-if(e.key==="Enter"&&!e.shiftKey){
+    // Enter = baris baru
+    if (e.key === "Enter" && !e.ctrlKey) {
+        return;
+    }
 
-e.preventDefault();
-
-sendMessage();
-
-}
+    // Ctrl + Enter = kirim pesan
+    if (e.key === "Enter" && e.ctrlKey) {
+        e.preventDefault();
+        sendMessage();
+    }
 
 });
 
@@ -449,3 +479,14 @@ Pilih pengguna untuk mulai chat.
 </div>
 
 `;
+const menu = document.querySelector(".menu");
+const btn = document.querySelector(".menu-btn");
+
+btn.onclick = (e) => {
+    e.stopPropagation();
+    menu.classList.toggle("show");
+};
+
+document.onclick = () => {
+    menu.classList.remove("show");
+};

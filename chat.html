@@ -19,26 +19,26 @@
 
         <div class="profile">
 
-            <img id="myPhoto"
-            src="https://files.catbox.moe/7n2m2x.jpg">
+    <img id="myPhoto" src="https://files.catbox.moe/7n2m2x.jpg">
 
-            <div>
+    <div class="profile-info">
+        <h3 id="myName">Loading...</h3>
+        <small id="myStatus">Online</small>
+    </div>
 
-                <h3 id="myName">
-                    Loading...
-                </h3>
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
 
-                <small id="myStatus">
-                    Online
-                </small>
-
-            </div>
-            
-            <button class="profile-btn" onclick="location.href='profile.html'">
-⚙️ settings
-</button>
-
+        <div class="menu-content">
+            <a href="profile.html">👤 Profile</a>
+            <a href="inbox.html">💬 Inbox</a>
+            <a href="admin.html">🛠 Admin</a>
+            <a href="logout.html">🚪 Logout</a>
+            <a href="index.html">  ↩️ Back</a>
         </div>
+    </div>
+
+</div>
 
         <div class="search-box">
 
@@ -55,13 +55,6 @@
 
         </div>
         
-        <button onclick="location.href='inbox.html'">
-  💬 Inbox
-</button>
-<button onclick="location.href='index.html'">
-  ↩️ Back
-</button>
-
     </div>
 
     <!-- CHAT -->
