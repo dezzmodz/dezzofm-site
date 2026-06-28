@@ -322,39 +322,78 @@ minute:"2-digit"
 
 }
 
-let text = msg.text
+  let text = msg.text
 
 // Escape HTML
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
+.replace(/&/g, "&amp;")
+.replace(/</g, "&lt;")
+.replace(/>/g, "&gt;")
 
-// Link
+// URL
 .replace(
- /(https?:\/\/[^\s]+)/g,
- '<a href="$1" target="_blank">$1</a>'
+    /(https?:\/\/[^\s<]+)/gi,
+    '<a href="$1" target="_blank">$1</a>'
+)
+
+// Email
+.replace(
+    /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,})/gi,
+    '<a href="mailto:$1">$1</a>'
 )
 
 // Bold **text**
-.replace(/\*\*(.*?)\*\*/g,"<b>$1</b>")
+.replace(/\*\*(.*?)\*\*/gs, "<b>$1</b>")
 
 // Italic *text*
-.replace(/\*(.*?)\*/g,"<i>$1</i>")
+.replace(/\*(.*?)\*/gs, "<i>$1</i>")
 
 // Underline __text__
-.replace(/__(.*?)__/g,"<u>$1</u>")
+.replace(/__(.*?)__/gs, "<u>$1</u>")
 
 // Strike ~~text~~
-.replace(/~~(.*?)~~/g,"<s>$1</s>")
+.replace(/~~(.*?)~~/gs, "<s>$1</s>")
+
+// Spoiler ||text||
+.replace(/\|\|(.*?)\|\|/gs,
+'<span class="spoiler">$1</span>')
 
 // Inline Code
-.replace(/`(.*?)`/g,"<code>$1</code>")
+.replace(/`([^`]+)`/g,
+"<code>$1</code>")
+
+// Code Block
+.replace(
+/```([\s\S]*?)```/g,
+"<pre><code>$1</code></pre>"
+)
 
 // Quote
-.replace(/^> (.*)$/gm,"<blockquote>$1</blockquote>")
+.replace(/^> (.*)$/gm,
+"<blockquote>$1</blockquote>")
+
+// Heading
+.replace(/^# (.*)$/gm,"<h1>$1</h1>")
+.replace(/^## (.*)$/gm,"<h2>$1</h2>")
+.replace(/^### (.*)$/gm,"<h3>$1</h3>")
+
+// Bullet List
+.replace(/^- (.*)$/gm,"• $1")
+
+// Mention @username
+.replace(
+/@([a-zA-Z0-9_]+)/g,
+'<span class="mention">@$1</span>'
+)
+
+// Hashtag
+.replace(
+/#([a-zA-Z0-9_]+)/g,
+'<span class="hashtag">#$1</span>'
+)
 
 // Baris baru
 .replace(/\n/g,"<br>");
+
 
 div.innerHTML = `
 <div class="bubble">
@@ -420,16 +459,16 @@ window.sendMessage = async function () {
 
 document.getElementById("message").addEventListener("keydown", (e) => {
 
-    // Enter = baris baru
-    if (e.key === "Enter" && !e.ctrlKey) {
-        return;
-    }
+// Enter = baris baru  
+if (e.key === "Enter" && !e.ctrlKey) {  
+    return;  
+}  
 
-    // Ctrl + Enter = kirim pesan
-    if (e.key === "Enter" && e.ctrlKey) {
-        e.preventDefault();
-        sendMessage();
-    }
+// Ctrl + Enter = kirim pesan  
+if (e.key === "Enter" && e.ctrlKey) {  
+    e.preventDefault();  
+    sendMessage();  
+}
 
 });
 
@@ -479,14 +518,3 @@ Pilih pengguna untuk mulai chat.
 </div>
 
 `;
-const menu = document.querySelector(".menu");
-const btn = document.querySelector(".menu-btn");
-
-btn.onclick = (e) => {
-    e.stopPropagation();
-    menu.classList.toggle("show");
-};
-
-document.onclick = () => {
-    menu.classList.remove("show");
-};
