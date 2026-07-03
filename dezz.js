@@ -375,3 +375,14 @@ function openurl(){
   }, 400);
 
 }
+
+function openclentext(){
+
+  document.body.style.transition = "0.4s";
+  document.body.style.opacity = "0";
+
+  setTimeout(() => {
+    window.location.href = "clentext.html";
+  }, 400);
+
+}

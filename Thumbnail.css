@@ -637,3 +637,90 @@ ULTRA SMALL DEVICE (optional)
     padding:14px;
   }
 }
+/* ==========================
+CYBER BUTTON NAV
+========================== */
+.btn-back{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:220px;
+    margin:25px auto 0;
+    padding:14px 24px;
+
+    border:2px solid transparent;
+    border-radius:16px;
+
+    color:#fff;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.5px;
+
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(#121826,#121826) padding-box,
+        linear-gradient(
+            90deg,
+            #00e5ff,
+            #00ff99,
+            #7c3aed,
+            #ff0088,
+            #00e5ff
+        ) border-box;
+
+    background-size:100% 100%,400% 100%;
+
+    animation:rgbBorder 5s linear infinite;
+
+    box-shadow:
+        0 0 15px rgba(0,229,255,.25);
+
+    transition:.3s;
+}
+
+.btn-back:hover{
+    transform:translateY(-3px) scale(1.05);
+
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 30px #7c3aed,
+        0 0 45px #ff0088;
+}
+
+.btn-back:active{
+    transform:scale(.96);
+}
+
+.btn-back::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.5s;
+}
+
+.btn-back:hover::before{
+    left:130%;
+}
+
+@keyframes rgbBorder{
+    from{
+        background-position:100% 100%,0% 0%;
+    }
+    to{
+        background-position:100% 100%,400% 0%;
+    }

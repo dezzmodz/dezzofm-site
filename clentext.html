@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Cleaner Pro - DezzXOFM</title>
+
+    <link rel="stylesheet" href="clentext.css">
+</head>
+
+<body>
+
+    <!-- GRID BACKGROUND -->
+    <div class="grid-bg"></div>
+
+    <!-- TOP LIGHT -->
+    <div class="top-light"></div>
+
+    <!-- CURSOR GLOW -->
+    <div id="cursorGlow"></div>
+
+    <!-- ONLINE STATUS -->
+    <div class="live-status">
+        <span></span>
+        AI SYSTEM ONLINE
+    </div>
+
+    <!-- CLOCK -->
+    <div class="live-clock" id="clock">
+        00:00:00
+    </div>
+
+    <!-- SYSTEM INFO -->
+    <div class="system-info">
+
+        <div class="fps-box">
+            <span id="fps">60</span> FPS
+        </div>
+
+        <div class="battery-box">
+            🔋 <span id="battery">100</span>%
+        </div>
+
+    </div>
+
+    <div class="container">
+
+    <h2>🚀 Text Cleaner Pro - DezzXOFM</h2>
+
+    <textarea id="textInput" placeholder="DezzXOFM"></textarea>
+
+    <div class="info" id="counter">
+        Karakter: 0 | Baris: 0
+    </div>
+
+    <div class="buttons">
+        <button class="copy" onclick="copyText()">SALIN</button>
+        <button class="clear" onclick="clearText()">HAPUS</button>
+        <button class="reset" onclick="resetCounter()">RESET</button>
+    </div>
+
+    <label class="checkbox">
+        <input type="checkbox" id="useMasslink" checked>
+        Pakai /masslink
+    </label>
+
+    <div class="rule-box">
+
+        <h3>🛠 Rule Builder</h3>
+
+        <div class="rule-top">
+
+            <select id="ruleType">
+                <option value="text">📝 Teks</option>
+                <option value="symbol">🔣 Simbol</option>
+                <option value="number">🔢 Angka</option>
+                <option value="letter">🔤 Huruf</option>
+            </select>
+
+            <input id="ruleInput" type="text" placeholder="Masukkan rule...">
+
+            <button onclick="addRule()">➕ Tambah</button>
+
+        </div>
+
+        <div id="ruleList"></div>
+
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <button class="btn-back" onclick="location.href='index.html'">
+        ↩️ Back
+    </button>
+
+</div>
+
+
+<!-- Script aplikasi -->
+<script type="module" src="clentext.js"></script>
+
+</body>
+
+</html>
