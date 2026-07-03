@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium URL Generator</title>
+
+<link rel="stylesheet" href="url.css">
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>⚡ Premium URL Generator</h2>
+
+<input
+    id="url"
+    value="https://dezzofm.vercel.app"
+    placeholder="Masukkan URL"
+>
+
+<div class="row">
+
+<input
+    id="awal"
+    type="number"
+    value="100"
+    placeholder="Awal"
+>
+
+<input
+    id="akhir"
+    type="number"
+    value="1000"
+    placeholder="Akhir"
+>
+
+</div>
+
+<div class="row">
+
+<select id="separator">
+
+<option value="=">=</option>
+<option value=" ">Spasi</option>
+<option value=".">.</option>
+<option value="/">/</option>
+<option value="?id=">?id=</option>
+<option value="?page=">?page=</option>
+<option value="#">#</option>
+<option value="-">-</option>
+<option value="_">_</option>
+
+</select>
+
+<input
+    id="grup"
+    type="number"
+    value="5"
+    min="1"
+    placeholder="Per Grup"
+>
+
+</div>
+
+<div class="row">
+
+<button
+    class="gen"
+    onclick="generate()">
+    Generate
+</button>
+
+<button
+    class="copy"
+    onclick="copyText()">
+    Copy
+</button>
+
+</div>
+
+<div class="row">
+
+<button
+    class="dl"
+    onclick="downloadTxt()">
+    Download
+</button>
+
+<button
+    class="clr"
+    onclick="clearAll()">
+    Clear
+</button>
+
+</div>
+
+<div class="progress">
+
+<div
+    class="bar"
+    id="bar">
+</div>
+
+</div>
+
+<textarea
+    id="hasil"
+    readonly>
+</textarea>
+
+<div class="info">
+
+<div class="box">
+Total
+<br>
+<b id="jumlah">0</b>
+</div>
+
+<div class="box">
+Time
+<br>
+<b id="waktu">0 ms</b>
+</div>
+
+</div>
+
+<p id="status">
+Siap...
+</p>
+
+</div>
+
+<script src="url.js"></script>
+
+</body>
+</html>

@@ -364,3 +364,14 @@ function openlogin(){
   }, 400);
 
 }
+
+function openurl(){
+
+  document.body.style.transition = "0.4s";
+  document.body.style.opacity = "0";
+
+  setTimeout(() => {
+    window.location.href = "url.html";
+  }, 400);
+
+}
