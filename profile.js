@@ -42,7 +42,7 @@ document.getElementById("photo").value=
 data.photo||"";
 
 document.getElementById("photoPreview").src=
-data.photo||"https://iili.io/C5r365x.th.jpg";
+data.photo||"https://i.ibb.co.com/Rk83TQnJ/sitagrup-pp.jpg";
 
 });
 

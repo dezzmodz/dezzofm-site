@@ -71,7 +71,7 @@ displayName,
 
 email,
 
-photo:"https://iili.io/C54s38X.jpg",
+photo:"https://i.ibb.co.com/Rk83TQnJ/sitagrup-pp.jpg",
 
 bio:"",
 

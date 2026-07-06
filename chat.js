@@ -81,7 +81,7 @@ document.getElementById("myName").innerHTML =
 myData.displayName || myData.username;
 
 document.getElementById("myPhoto").src =
-(myData.photo || "https://iili.io/C5r365x.th.jpg") + "?t=" + Date.now();
+(myData.photo || "https://i.ibb.co.com/Rk83TQnJ/sitagrup-pp.jpg") + "?t=" + Date.now();
 
 
 }
@@ -118,7 +118,7 @@ div.innerHTML=
 
 `
 
-<img src="${user.photo||'https://iili.io/C5r365x.th.jpg'}">
+<img src="${user.photo||'https://i.ibb.co.com/Rk83TQnJ/sitagrup-pp.jpg'}">
 
 <div class="user-info">
 
@@ -248,7 +248,7 @@ document.getElementById("chatBio").innerHTML =
 user.bio || "Belum ada bio.";
 
 document.getElementById("chatPhoto").src =
-  (user.photo || "https://iili.io/C5r365x.th.jpg") + "?t=" + Date.now();
+  (user.photo || "https://i.ibb.co.com/Rk83TQnJ/sitagrup-pp.jpg") + "?t=" + Date.now();
 
 await setDoc(
 
@@ -517,28 +517,44 @@ document.getElementById("photoBtn").onclick = () => {
     document.getElementById("photoInput").click();
 };
 
-    const IMGBB_API_KEY = "513fb30ed6cefebbb37a4700f2e7098d";
-// atau gunakan key yang satunya jika ini tidak bekerja
+    const IMGBB_API_KEYS = [
+    "513fb30ed6cefebbb37a4700f2e7098d",
+    "325a82e2ff35d40aa0dd65c741653f06"
+];
 
 async function uploadImage(file){
 
-    const form = new FormData();
-    form.append("image", file);
+    for (const apiKey of IMGBB_API_KEYS) {
 
-    const res = await fetch(
-        `https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`,
-        {
-            method: "POST",
-            body: form
+        try {
+
+            const form = new FormData();
+            form.append("image", file);
+
+            const res = await fetch(
+                `https://api.imgbb.com/1/upload?key=${apiKey}`,
+                {
+                    method: "POST",
+                    body: form
+                }
+            );
+
+            const data = await res.json();
+
+            if (data.success) {
+                return data.data.url;
+            }
+
+            console.log("API gagal:", apiKey, data);
+
+        } catch (err) {
+
+            console.log("Error API:", apiKey, err);
+
         }
-    );
 
-    const data = await res.json();
-
-    if(!data.success){
-        console.log(data);
-        throw new Error("Upload gagal");
     }
 
-    return data.data.url;
+    throw new Error("Semua API ImgBB gagal.");
+
 }
