@@ -10,7 +10,7 @@ const socialLinks = [
 function goLink(id){
 
 const links = {
-1: "https://t.me/DezzV1bot?start=U1BFQ0lBTAa0wAAkFNbwMCAAM",
+1: "https://dezzofm.blogspot.com",
 2: "https://safefileku.com/download/ODUmAK8scIGWMxTe",
 3: "https://safefileku.com/download/OvBbRK5xQPqnweqV",
 4: "https://sub4unlock.co/2ueMr",
@@ -26,18 +26,17 @@ const links = {
 14: "https://move2link.co/a09a0e2",
 15: "https://move2link.co/a9ded5d",
 16: "https://move2link.co/fc9187a",
-17: "https://cubanmods.com/keygratis.php",
-18: "https://aincradproxy.xyz/getkey",
-19: "https://zerigame.site/ctv/Neko.php",
-20: "https://nxlmods.io.vn/menuhoptac/getkey.php",
-21: "http://s3-hacks-get-key-production-eca0.up.railway.app",
-22: "https://viku.urlking.in/vikash",
-23: "https://criticalxr.alwaysdata.net/",
-24: "https://viku.mypdftools.site/mk",
-25: "https://ysmteam.io.vn/api/getkey/YSMTEAM",
-26: "https://safefileku.com/download/i1FRFBrBd9pzjp3J",
-27: "https://safefileku.com/download/3WEinultZ7CMFZVo",
-28: "https://gringoxp.site/gringo/GetKey"
+17: "https://safefileku.com/download/i1FRFBrBd9pzjp3J",
+18: "https://safefileku.com/download/3WEinultZ7CMFZVo",
+19:"https://sub4unlock.co/Xrn6",
+20:"https://sub4unlock.co/nrS33g",
+21:"https://sub4unlock.co/BPg0QmY",
+22:"https://sub4unlock.co/bbtZQ5yX",
+23:"https://move2link.co/892db8f",
+24:"https://move2link.co/40ae8de",
+25:"https://move2link.co/0118709",
+26:"https://move2link.co/eac614f",
+27:"https://sub4unlock.co/1DOxC"
 };
 
 if(!links[id]){
