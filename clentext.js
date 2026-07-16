@@ -95,7 +95,7 @@ function copyText(){
   "🎬 youtube.com/shorts/vyLfHIKgGCI?si=SN8ypUS-QTva1HJx\n\n" +
   tangal + "\n\n" +
   "📌 𝙉𝙊𝙏𝙀:\n" +
-  "⭕ 𝐉𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐝𝐢 𝐬𝐡𝐞𝐫 𝐤𝐞 𝐭𝐞𝐦𝐚𝐧 𝐚𝐭𝐚𝐮 𝐬𝐢𝐚𝐩𝐚𝐩𝐮𝐧, 𝐝𝐚𝐧 𝐣𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐬𝐮𝐩𝐨𝐫𝐭 𝐤𝐚𝐦𝐢 𝐛𝐢𝐚𝐫 𝐤𝐚𝐦𝐢 𝐜𝐞𝐩𝐚𝐭 𝐛𝐞𝐫𝐤𝐞𝐦𝐛𝐚𝐧𝐠 𝐥𝐞𝐛𝐢𝐡 𝐛𝐚𝐢𝐤 𝐤𝐞𝐝𝐞𝐩𝐚𝐧𝐧𝐲𝐚.\n"+"🐦‍🔥 AYO KOLEKSI MODS, FILE,CONFIG, CHEATS, SEBELUM TERLAMBAT, KOLEKSI DAN JANGAN LUPA SHARE JUGA YA 🫶. ⚠️‼️#sellsingapore ‼️⚠️\n #mods #modmenu #modapk #modgame #game #gaming #gamer #mobilegaming #android #ios #onlinegame #freefire #freefiremax #ff #ffmods #ffhack #blostrike #gameode #search #tools #utility #viral #trending #fyp #explore #explorepage #gamingcommunity #games #multiplayer #battle #action #update #new #2026 #2027 #telegram #tele #dezzreal1 #global #worldwide #mobile #app #apk #gamingclips #gametools #mods2026 #viralgaming #gamersworld dezzofm.blogspot.com \n\n"+
+  "⭕ 𝐉𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐝𝐢 𝐬𝐡𝐞𝐫 𝐤𝐞 𝐭𝐞𝐦𝐚𝐧 𝐚𝐭𝐚𝐮 𝐬𝐢𝐚𝐩𝐚𝐩𝐮𝐧, 𝐝𝐚𝐧 𝐣𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐬𝐮𝐩𝐨𝐫𝐭 𝐤𝐚𝐦𝐢 𝐛𝐢𝐚𝐫 𝐤𝐚𝐦𝐢 𝐜𝐞𝐩𝐚𝐭 𝐛𝐞𝐫𝐤𝐞𝐦𝐛𝐚𝐧𝐠 𝐥𝐞𝐛𝐢𝐡 𝐛𝐚𝐢𝐤 𝐤𝐞𝐝𝐞𝐩𝐚𝐧𝐧𝐲𝐚.\n"+"🐦‍🔥 AYO KOLEKSI MODS, FILE,CONFIG, CHEATS, SEBELUM TERLAMBAT, KOLEKSI DAN JANGAN LUPA SHARE JUGA YA 🫶. \n #mods #modmenu #modapk #modgame #game #gaming #gamer #mobilegaming #android #ios #onlinegame #freefire #freefiremax #ff #ffmods #ffhack #blostrike #gameode #search #tools #utility #viral #trending #fyp #explore #explorepage #gamingcommunity #games #multiplayer #battle #action #update #new 2026-2027 #telegram #tele #dezzreal1 @dezzreal1 @DezzV1bot #global #worldwide #mobile #app #apk #gamingclips #gametools #mods2026 #viralgaming #gamersworld dezzofm.blogspot.com \n\n"+
 "⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌\n";
 
   /* HASIL FINAL */
