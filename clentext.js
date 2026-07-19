@@ -95,7 +95,13 @@ function copyText(){
   "🎬 youtube.com/shorts/vyLfHIKgGCI?si=SN8ypUS-QTva1HJx\n\n" +
   tangal + "\n\n" +
   "📌 𝙉𝙊𝙏𝙀:\n" +
-  "⭕ 𝐉𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐝𝐢 𝐬𝐡𝐞𝐫 𝐤𝐞 𝐭𝐞𝐦𝐚𝐧 𝐚𝐭𝐚𝐮 𝐬𝐢𝐚𝐩𝐚𝐩𝐮𝐧, 𝐝𝐚𝐧 𝐣𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐬𝐮𝐩𝐨𝐫𝐭 𝐤𝐚𝐦𝐢 𝐛𝐢𝐚𝐫 𝐤𝐚𝐦𝐢 𝐜𝐞𝐩𝐚𝐭 𝐛𝐞𝐫𝐤𝐞𝐦𝐛𝐚𝐧𝐠 𝐥𝐞𝐛𝐢𝐡 𝐛𝐚𝐢𝐤 𝐤𝐞𝐝𝐞𝐩𝐚𝐧𝐧𝐲𝐚.\n"+"🐦‍🔥 AYO KOLEKSI MODS, FILE,CONFIG, CHEATS, SEBELUM TERLAMBAT, KOLEKSI DAN JANGAN LUPA SHARE JUGA YA 🫶. \n #mods #modmenu #modapk #modgame #game #gaming #gamer #mobilegaming #android #ios #onlinegame #freefire #freefiremax #ff #ffmods #ffhack #blostrike #gameode #search #tools #utility #viral #trending #fyp #explore #explorepage #gamingcommunity #games #multiplayer #battle #action #update #new 2026-2027 #telegram #tele #dezzreal1 @dezzreal1 @DezzV1bot #global #worldwide #mobile #app #apk #gamingclips #gametools #mods2026 #viralgaming #gamersworld dezzofm.blogspot.com \n\n"+
+  "⭕ 𝐉𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐝𝐢 𝐬𝐡𝐞𝐫 𝐤𝐞 𝐭𝐞𝐦𝐚𝐧 𝐚𝐭𝐚𝐮 𝐬𝐢𝐚𝐩𝐚𝐩𝐮𝐧, 𝐝𝐚𝐧 𝐣𝐚𝐧𝐠𝐚𝐧 𝐥𝐮𝐩𝐚 𝐬𝐮𝐩𝐨𝐫𝐭 𝐤𝐚𝐦𝐢 𝐛𝐢𝐚𝐫 𝐤𝐚𝐦𝐢 𝐜𝐞𝐩𝐚𝐭 𝐛𝐞𝐫𝐤𝐞𝐦𝐛𝐚𝐧𝐠 𝐥𝐞𝐛𝐢𝐡 𝐛𝐚𝐢𝐤 𝐤𝐞𝐝𝐞𝐩𝐚𝐧𝐧𝐲𝐚.\n"+"🐦‍🔥 AYO KOLEKSI MODS, FILE,CONFIG, CHEATS, SEBELUM TERLAMBAT, KOLEKSI DAN JANGAN LUPA SHARE JUGA YA 🫶.⚠️‼️#sellsingapore ‼️⚠️\n\n"+
+"⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌\n" +
+"💸 𝙈𝙊𝘿𝘼𝙇 𝙇𝙄𝙉𝙆 𝘿𝘼𝙋𝙀𝙏 𝘾𝙐𝘼𝙉💸 𝘿𝘼𝙁𝙏𝘼𝙍 𝘿𝙀𝙉𝙂𝘼𝙉 𝙆𝙇𝙄𝘾𝙆 𝙇𝙄𝙉𝙆 𝘿𝙄 𝘽𝘼𝙒𝘼𝙃\n\n" +
+"𝚔𝚕𝚒𝚌𝚔 𝚍𝚊𝚗 𝚍𝚊𝚏𝚝𝚊𝚛 𝚐𝚞𝚗𝚊𝚔𝚊𝚗 𝚔𝚘𝚍𝚎 𝚕𝚒𝚗𝚔 𝚒𝚗𝚒 𝚜𝚎𝚋𝚊𝚐𝚊𝚒 𝚍𝚊𝚏𝚝𝚊𝚛𝚗𝚢𝚊📝\n" +
+"➤ safelinku.com/ref/akunsaweriadezz\n" +
+"➤ move2link.com/ref?id=1c6f373792a4d7b9\n" +
+"ᴍᴏᴅᴀʟ ʟɪɴᴋ ᴅᴀᴘᴇᴛ ᴄᴜᴀɴ ᴅᴀғᴛᴀʀ sᴇᴋᴀʀᴀɴɢ ᴅᴀɴ ᴄʟᴀɪᴍ ʙᴏɴᴜsɴʏᴀ🤑💰💸\n" + "𝙳𝙰𝙶𝙴𝚃 𝚂𝙴𝚃𝙸𝙰𝙿 𝙼𝙸𝙽𝙶𝙶𝚄 𝙷𝙰𝙽𝚈𝙰 𝙳𝙸  𝚆𝙴𝙱 𝙺𝙰𝙼𝙸\n" + "𝚈𝚊𝚗𝚐 𝚖𝚊𝚞 𝚓𝚞𝚐𝚊 𝚔𝚎 𝚜𝚒𝚗𝚒 𝚢𝚊  sociabuzz.com/dezzreal  𝙲𝚊𝚛𝚒 𝚢𝚐 𝚊𝚍𝚊 𝚃𝚞𝚕𝚒𝚜𝚊𝚗 『𝙳𝙰𝙶𝙴𝚃』𝚌𝚕𝚊𝚒𝚖 𝚍𝚊𝚐𝚎𝚝 𝚔𝚎𝚋𝚞𝚛𝚞 𝚊𝚗𝚐'𝚞𝚞𝚜𝚜\n" +
 "⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌⚌\n";
 
   /* HASIL FINAL */

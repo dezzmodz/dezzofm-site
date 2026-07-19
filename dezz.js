@@ -1,3 +1,81 @@
+const welcomeLinks = [
+    "https://www.youtube.com/@DezZXMods",
+    "https://www.instagram.com/dez_realmods?igsh=MTdqdXdmZDc2MzQwag==",
+    "https://www.tiktok.com/@dezz_realmods"
+];
+
+let welcomeCurrent = 1;
+
+for (let i = 1; i <= welcomeLinks.length; i++) {
+
+    const step = document.getElementById("welcomeStep" + i);
+
+    if (!step) continue;
+
+    step.dataset.text = step.innerHTML;
+
+    step.onclick = () => {
+
+        if (i !== welcomeCurrent) {
+            alert("⚠️ Selesaikan langkah sebelumnya!");
+            return;
+        }
+
+        window.open(welcomeLinks[i - 1], "_blank");
+
+        step.style.pointerEvents = "none";
+
+        let countdown = 5;
+
+        step.innerHTML = `⏳ Please wait ${countdown}s`;
+
+        const timer = setInterval(() => {
+
+            countdown--;
+
+            if (countdown <= 0) {
+
+                clearInterval(timer);
+
+                step.classList.add("done");
+                step.innerHTML = step.dataset.text + " ✅";
+
+                welcomeCurrent++;
+
+                const selesai = welcomeCurrent - 1;
+                const total = welcomeLinks.length;
+                const persen = (selesai / total) * 100;
+
+                document.getElementById("welcomeProgressFill").style.width = persen + "%";
+
+                document.getElementById("welcomeProgressText").innerHTML =
+                    `${selesai}/${total} Step Complete (${persen}%)`;
+
+                if (welcomeCurrent > total) {
+                    document.getElementById("welcomeUnlockMenu").style.display = "block";
+
+                    if (typeof confetti === "function") {
+                        confetti({
+                            particleCount: 120,
+                            spread: 100
+                        });
+                    }
+                }
+
+            } else {
+
+                step.innerHTML = `⏳ Please wait ${countdown}s`;
+
+            }
+
+        }, 1000);
+
+    };
+
+}
+
+// JOIN DI OVERLAY 👆
+
 const socialLinks = [
 "https://whatsapp.com/channel/0029Vb7aIVe2UPBK5qaTPP1V",
 "https://www.youtube.com/@DezZXMods",
@@ -36,7 +114,8 @@ const links = {
 24:"https://move2link.co/40ae8de",
 25:"https://move2link.co/0118709",
 26:"https://move2link.co/eac614f",
-27:"https://sub4unlock.co/1DOxC"
+27:"https://sub4unlock.co/1DOxC",
+28:"https://sub4unlock.co/b6kAK8AA"
 };
 
 if(!links[id]){

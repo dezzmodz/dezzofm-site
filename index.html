@@ -11,7 +11,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dezz.css">
 
 </head>
 <body>
@@ -22,20 +22,48 @@
 <div id="welcomeOverlay">
   <div class="welcome-box">
 
-    <h1>👋 Welcome To 𝘿𝙚𝙯𝙕✘𝙊𝙁𝙈</h1>
 
-    <p>
-      🔒 Secure Access System<br><br>
-      To protect premium content,<br>
-      please complete all verification<br>
-      steps before continuing.
-      <br><br>
-      ⚡ Status : Waiting Verification
-    </p>
+<h2 class="step-title">Welcome to 𝘿𝙚𝙯𝙕✘𝙊𝙁𝙈 </h2>
 
-<button id="startBtn" onclick="startWebsite()">
-  🚀 Start Verification
-</button>
+<p class="description">
+    Complete all verification steps to unlock exclusive premium content.</p>
+
+<div class="step-list">
+
+    <div class="step" id="welcomeStep1">▶️ Subscribe YouTube</div>
+
+<div class="step" id="welcomeStep2">🎵 Follow TikTok</div>
+
+<div class="step" id="welcomeStep3">📷 Follow Instagram</div>
+
+</div>
+
+<div class="progress-box">
+
+    <div class="progress-title">
+        🚀 Progress Unlock
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="welcomeProgressFill"></div>
+    </div>
+
+    <div class="progress-text" id="welcomeProgressText">
+        0/2 Step Complete
+    </div>
+
+</div>
+
+<div id="welcomeUnlockMenu"
+     class="unlock-grid"
+     style="display:none;">
+
+    <button id="startBtn"
+            onclick="startWebsite()">
+        🚀 Start Website
+    </button>
+
+</div>
 
   </div>
 </div>
@@ -116,6 +144,7 @@
     <button onclick="goLink(25)">(53) HOLOGRAM KARAKTER FFMAX YELLOW💛</button>
     <button onclick="goLink(26)">(53) HOLOGRAM WAEPON FFMAX YELLOW💛</button>
     <button onclick="goLink(27)">(54) HOLOGRAM WAEPON BLUE 🔵</button>
+    <button onclick="goLink(28)">AIMLOCK 97% PERMAN (FF ORI & FF MAX)</button>
 
     
   </div>
@@ -216,7 +245,7 @@
 
     <div class="app-version">
 
-        <b>Version:</b> V5.14.8.4 (Stable)
+        <b>Version:</b> V5.15.9.5 (Stable)
         <br>
 
         Stable = Versi stabil dan resmi untuk digunakan semua pengguna.
