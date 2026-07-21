@@ -464,25 +464,3 @@ function openclentext(){
   }, 400);
 
 }
-
-function opengetkey(){
-
-  document.body.style.transition = "0.4s";
-  document.body.style.opacity = "0";
-
-  setTimeout(() => {
-    window.location.href = "getkey_mods.html";
-  }, 400);
-
-}
-
-function openqris(){
-
-  document.body.style.transition = "0.4s";
-  document.body.style.opacity = "0";
-
-  setTimeout(() => {
-    window.location.href = "link_to_qr.html";
-  }, 400);
-
-}
