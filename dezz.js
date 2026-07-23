@@ -1,7 +1,8 @@
 const welcomeLinks = [
     "https://www.youtube.com/@DezZXMods",
     "https://www.instagram.com/dez_realmods?igsh=MTdqdXdmZDc2MzQwag==",
-    "https://www.tiktok.com/@dezz_realmods"
+    "https://www.tiktok.com/@dezz_realmods",
+    "https://sociabuzz.com/dezzreal"
 ];
 
 let welcomeCurrent = 1;
